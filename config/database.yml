@@ -77,14 +77,14 @@ test:
 # the values provided in this file. Alternatively, you can specify a connection
 # URL environment variable explicitly:
 #
-#   production:
-#     url: <%= ENV["MY_APP_DATABASE_URL"] %>
+  production:
+    url: <%= ENV["postgres://kmdbswhrfqfibz:36b83129a7b3fda2a61a77b449e34e4fe7df23bd8e3545a962861f5f3f201056@ec2-34-226-11-94.compute-1.amazonaws.com:5432/dk3sevi8ddi3p"] %>
 #
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-production:
-  <<: *default
-  database: lotos_checker_production
-  username: lotos_checker
-  password: <%= ENV["LOTOS_CHECKER_DATABASE_PASSWORD"] %>
+# production:
+#   <<: *default
+#   database: lotos_checker_production
+#   username: lotos_checker
+#   password: <%= ENV["LOTOS_CHECKER_DATABASE_PASSWORD"] %>
