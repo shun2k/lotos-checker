@@ -1,0 +1,92 @@
+<div id="<%= dom_id loto7 %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Times:</strong>
+    <%= loto7.times %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">First:</strong>
+    <%= loto7.first %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Second:</strong>
+    <%= loto7.second %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Third:</strong>
+    <%= loto7.third %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Forth:</strong>
+    <%= loto7.forth %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Fifth:</strong>
+    <%= loto7.fifth %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Sixth:</strong>
+    <%= loto7.sixth %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Seventh:</strong>
+    <%= loto7.seventh %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Bonusfirst:</strong>
+    <%= loto7.bonusfirst %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Bonussecond:</strong>
+    <%= loto7.bonussecond %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Announcement:</strong>
+    <%= loto7.announcement %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Firstcounts:</strong>
+    <%= loto7.firstcounts %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Secondcounts:</strong>
+    <%= loto7.secondcounts %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Thirdcounts:</strong>
+    <%= loto7.thirdcounts %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Forthcounts:</strong>
+    <%= loto7.forthcounts %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Fifthcounts:</strong>
+    <%= loto7.fifthcounts %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Sixthcounts:</strong>
+    <%= loto7.sixthcounts %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this loto7", loto7, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this loto7', edit_loto7_path(loto7), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

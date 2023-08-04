@@ -1,0 +1,39 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  times: 1
+  first: MyString
+  second: MyString
+  third: MyString
+  forth: MyString
+  fifth: MyString
+  sixth: MyString
+  seventh: MyString
+  bonusfirst: MyString
+  bonussecond: MyString
+  announcement: 2023-08-04 02:05:01
+  firstcounts: 1
+  secondcounts: 1
+  thirdcounts: 1
+  forthcounts: 1
+  fifthcounts: 1
+  sixthcounts: 1
+
+two:
+  times: 1
+  first: MyString
+  second: MyString
+  third: MyString
+  forth: MyString
+  fifth: MyString
+  sixth: MyString
+  seventh: MyString
+  bonusfirst: MyString
+  bonussecond: MyString
+  announcement: 2023-08-04 02:05:01
+  firstcounts: 1
+  secondcounts: 1
+  thirdcounts: 1
+  forthcounts: 1
+  fifthcounts: 1
+  sixthcounts: 1
