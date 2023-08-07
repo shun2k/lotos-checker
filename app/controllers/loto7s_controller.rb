@@ -1,4 +1,6 @@
 class Loto7sController < ApplicationController
+  before_action :authenticate_admin!
+
   before_action :set_loto7, only: %i[ show edit update destroy ]
 
   # GET /loto7s or /loto7s.json
