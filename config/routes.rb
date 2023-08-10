@@ -1,14 +1,24 @@
 Rails.application.routes.draw do
-  resources :analyses
+
+  # analyses routes
+  resources :analyses do
+    member do
+      get :generate_data
+    end
+  end
+
+  #devise routes
   devise_for :admins, controllers: {
     sessions: 'admins/sessions',
     passwords:     'admins/passwords',
     registrations: 'admins/registrations'
   }
 
+  # loto7s routes
   resources :loto7s
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  #services routes
   # Defines the root path route ("/")
   root 'services#index'
   get 'services/show', to: 'services#show'
