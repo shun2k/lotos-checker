@@ -19,6 +19,12 @@ class AnalysesController < ApplicationController
   def edit
   end
 
+  # GET /analyses/data_generate
+  def generate_data
+    
+  end
+
+
   # POST /analyses or /analyses.json
   def create
     @analysis = Analysis.new(analysis_params)
