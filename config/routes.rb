@@ -24,4 +24,5 @@ Rails.application.routes.draw do
   get 'services/show', to: 'services#show'
   get 'services/search', to: 'services#search'
   get 'services/data', to: 'services#data'
+  get 'services/analysis_results', to: 'services#analysis_results'
 end
