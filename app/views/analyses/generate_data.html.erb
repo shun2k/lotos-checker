@@ -1,1 +1,16 @@
-<h1>data_generateページ</h1>
+<div>
+  <h1>generate_dataページ</h1>
+</div>
+<div>
+  <p><%="#{@last_data_announcement} までのデータによる数字" %></p>
+  <p><%= "回数: #{@total_count}" %></p>
+    <% (1..37).each do |number| %>
+    <p><%= "#{number}: #{@count_hash[number]} (#{@probability_hash[number]}%)" %></p>
+  <% end %>
+</div>
+<div>
+  <%= form_with(url: new_analysis_url, method: :get) do |form| %>
+    <%= form.hidden_field :number_data, value: @number_data %>
+    <%= form.submit "データを作成する" %>
+  <% end %>
+</div>

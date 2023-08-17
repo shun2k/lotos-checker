@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   # analyses routes
   resources :analyses do
-    member do
+    collection do
       get :generate_data
     end
   end
