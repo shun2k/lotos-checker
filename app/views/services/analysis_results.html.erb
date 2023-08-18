@@ -1,0 +1,19 @@
+<h1>Analysis</h1>
+
+<p>Total Count: <%= @data_hash["total_count"] %></p>
+
+<p>Count Hash:</p>
+<ul>
+  <% sorted_count_keys = @data_hash["count_hash"].keys.map(&:to_i).sort %>
+  <% sorted_count_keys.each do |number| %>
+    <li><%= "#{number}: #{@data_hash["count_hash"][number.to_s]}" %></li>
+  <% end %>
+</ul>
+
+<p>Probability Hash:</p>
+<ul>
+  <% sorted_probability_keys = @data_hash["probability_hash"].keys.map(&:to_i).sort %>
+  <% sorted_probability_keys.each do |number| %>
+    <li><%= "#{number}: #{@data_hash["probability_hash"][number.to_s]} %" %></li>
+  <% end %>
+</ul>

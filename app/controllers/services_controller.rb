@@ -16,5 +16,10 @@ class ServicesController < ApplicationController
       flash.now[:notice] = "該当するデータはありません。"
     end
   end
+
+  def analysis_results
+    @analysis = Analysis.last
+    @data_hash = JSON.parse(@analysis.data)
+  end
   
 end
