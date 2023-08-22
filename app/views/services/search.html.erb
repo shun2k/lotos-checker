@@ -3,5 +3,22 @@
 <p><%= result.first %>,  <%= result.second %>、 <%= result.third %>、 
 <%= result.forth %>、 <%= result.fifth %>、 <%= result.sixth %>、 <%= result.seventh %></p>
 <p><%= result.announcement %></p>
+<% end %> 
 <hr>
+<div>
+<p>６つ一致</p>
+<% @six_hit_results.each do |six_hit_result| %>
+<% six_hit_result.each do |result| %>
+<p><%= "第 #{result['times']}  開催日  #{result['announcement']}" %></p>
+<p><%= "１番目: #{result['first']} 
+        ２番目: #{result['second']}
+        ３番目: #{result['third']}
+        ４番目: #{result['forth']} 
+        ５番目: #{result['fifth']}
+        ６番目: #{result['sixth']}
+        ７番目: #{result['seventh']}"
+    %>
+</p> 
 <% end %>
+<% end %>
+</div>
