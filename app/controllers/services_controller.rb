@@ -20,9 +20,9 @@ class ServicesController < ApplicationController
       search_service = SearchService.new
       @six_hit_results = search_service.make_sql_six_hit(@params)
 
-      if @six_hit_results.empty? && 
-        flash.now[:notice] = "該当するデータはありません"
-      end
+      # if @six_hit_results.empty? && 
+      #   flash.now[:notice] = "該当するデータはありません"
+      # end
     end
 
     # puts "下 data 表示"
