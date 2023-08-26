@@ -1,19 +1,17 @@
-<%= form_with(model: @loto7s, url: services_search_path, method: :get, data: { controller: "service-form"}) do |f| %>
+<%= form_with(model: @loto7s, url: services_search_path, method: :get, data: { controller: "service-form" }) do |f| %>
   <div class="grid grid-cols-4 gap-4">
     <% (1..37).each do | number | %>
-      <label calss="flex items-conter space-x-2">
-        <%= check_box_tag "numbers[]", number %>
+      <label class="flex items-conter space-x-2">
+        <%= check_box_tag "numbers[]", number, false, data: { service_form_target: "checkboxes" } %>
         <%= number %>
       </label>
     <% end %>
   </div>
 
   <div>
-    <%= f.submit "決定" %>
+    <%= f.submit "決定", disabled: true, data: { service_form_target: "submitButton" } %>
   </div>
 <% end %>  
-
-
 
 
 
