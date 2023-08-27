@@ -1,7 +1,7 @@
 class ServicesController < ApplicationController
 
   def index
-    @loto7s = Loto7.all
+    @loto7 = Loto7.last
   end
 
   def show
@@ -33,6 +33,10 @@ class ServicesController < ApplicationController
   def analysis_results
     @analysis = Analysis.last
     @data_hash = JSON.parse(@analysis.data)
+  end
+
+  def previous_data
+    @loto7s = Loto7.all
   end
   
 end
