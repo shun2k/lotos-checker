@@ -5,10 +5,6 @@ class ServicesController < ApplicationController
   end
 
   def show
-    @loto7s = Loto7.new
-  end
-
-  def search
     # 選択した数字が全て一致する検索
     @params = params[:numbers]
 
@@ -28,6 +24,10 @@ class ServicesController < ApplicationController
     # puts "下 data 表示"
     # puts @six_hit_results
     # puts "上　data 表示"
+  end
+
+  def search
+    @loto7s = Loto7.new
   end
 
   def analysis_results
