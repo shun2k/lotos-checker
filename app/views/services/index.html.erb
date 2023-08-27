@@ -1,6 +1,6 @@
 <div>
-  <h1 class="font-bold text-4xl">Services#index</h1>
-  <p>Find me in app/views/services/index.html.erb</p>
+  <h1 class="font-bold text-4xl">ホーム</h1>
+  <p>Loto7 のデータページです</p>
   <table>
     <tbody>
       <tr>
@@ -22,27 +22,25 @@
         <th>５等</th>
         <th>６等</th>
       </tr>
-      <% @loto7s.each do |loto7| %>
         <tr>
-          <td><%= loto7.times %></td>
-          <td><%= loto7.first %></td>
-          <td><%= loto7.second %></td>
-          <td><%= loto7.third %></td>
-          <td><%= loto7.forth %></td>
-          <td><%= loto7.fifth %></td>
-          <td><%= loto7.sixth %></td>
-          <td><%= loto7.seventh %></td>
-          <td><%= loto7.bonusfirst %></td>
-          <td><%= loto7.bonussecond %></td>
-          <td><%= loto7.announcement %></td>
-          <td><%= loto7.firstcounts %></td>
-          <td><%= loto7.secondcounts %></td>
-          <td><%= loto7.thirdcounts %></td>
-          <td><%= loto7.forthcounts %></td>
-          <td><%= loto7.fifthcounts %></td>
-          <td><%= loto7.sixthcounts %></td>
+          <td><%= @loto7.times %></td>
+          <td><%= @loto7.first %></td>
+          <td><%= @loto7.second %></td>
+          <td><%= @loto7.third %></td>
+          <td><%= @loto7.forth %></td>
+          <td><%= @loto7.fifth %></td>
+          <td><%= @loto7.sixth %></td>
+          <td><%= @loto7.seventh %></td>
+          <td><%= @loto7.bonusfirst %></td>
+          <td><%= @loto7.bonussecond %></td>
+          <td><%= @loto7.announcement %></td>
+          <td><%= @loto7.firstcounts %></td>
+          <td><%= @loto7.secondcounts %></td>
+          <td><%= @loto7.thirdcounts %></td>
+          <td><%= @loto7.forthcounts %></td>
+          <td><%= @loto7.fifthcounts %></td>
+          <td><%= @loto7.sixthcounts %></td>
         </tr>
-      <% end %>
     </tbody>
   </table>
 </div>
