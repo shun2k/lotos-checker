@@ -1,37 +1,10 @@
-<h1> 検索結果 </h1>
 <div>
-<p>入力した数字</p>
-<p><%= @params %></p>
-<div>
-<% if @search_results.any? %>
-<% @search_results.each do |result| %>
-	<p>過去に１等になった数値です</p>
-	<p><%= result.first %>,  <%= result.second %>、 <%= result.third %>、 
-	<%= result.forth %>、 <%= result.fifth %>、 <%= result.sixth %>、 <%= result.seventh %></p>
-	<p><%= result.announcement %></p>
-	<% end %>
-<% else %>
-	<p>完全一致するデータはありません</p>
-<% end %>
-<hr>
-<div>
-<% if !@six_hit_results.blank? %>
-	<p>6つ一致するデータはあります</p>
-	<% @six_hit_results.each do |six_hit_result| %>
-		<% six_hit_result.each do |result| %>
-		<p><%= "第 #{result['times']}  開催日  #{result['announcement']}" %></p>
-		<p><%= "１番目: #{result['first']} 
-						２番目: #{result['second']}
-						３番目: #{result['third']}
-						４番目: #{result['forth']} 
-						５番目: #{result['fifth']}
-						６番目: #{result['sixth']}
-						７番目: #{result['seventh']}"
-				%>
-		</p> 
-		<% end %>
-	<% end %>
-<% elsif not @search_results.any? %>
-	<p>7個中6つ一致するデータはありません</p>
-<% end %>
+  <div>
+    <h1 class="font-bold text-4xl">番号検索</h1>
+    <p>7つ数字を選んで決定ボタンを押してください</p>
+    <hr>
+  </div>
+  <div>
+    <%= render partial: 'form' %>
+  </div>
 </div>
