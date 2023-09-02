@@ -9,7 +9,9 @@
   </div>
 
   <div>
-    <%= f.submit "決定", disabled: true, data: { service_form_target: "submitButton" } %>
+    <button class="bg-blue-600 hover:bg-blue-500 text-white rounded px-4 py-2">
+      <%= f.submit "決定", disabled: true, data: { service_form_target: "submitButton" } %>
+    </button>
   </div>
 <% end %>  
 

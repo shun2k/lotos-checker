@@ -11,6 +11,8 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        sansjp: ["Not Sans JP", "sans-serif"],
+        merriweather: ["Merriweather", "serif"],
       },
     },
   },
