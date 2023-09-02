@@ -33,7 +33,7 @@
           <td><%= @loto7.seventh %></td>
           <td><%= @loto7.bonusfirst %></td>
           <td><%= @loto7.bonussecond %></td>
-          <td><%= @loto7.announcement %></td>
+          <td><%= Time.parse("#{@loto7.announcement}").strftime('%Y年%m月%d日') %></td>
           <td><%= @loto7.firstcounts %></td>
           <td><%= @loto7.secondcounts %></td>
           <td><%= @loto7.thirdcounts %></td>
