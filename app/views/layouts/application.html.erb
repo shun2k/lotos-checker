@@ -9,17 +9,16 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
 
-  <body>
+  <body class="bg-stone-50  text-slate-700">
     <%= render 'layouts/header' %>
 
-    <main class="container mx-auto mt-28 px-5 flex font-sansjp">
+    <main class="font-sansjp">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>
     </main>
-
-    <%= render 'layouts/footer' %>
   </body>
 </html>

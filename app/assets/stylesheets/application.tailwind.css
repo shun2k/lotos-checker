@@ -11,3 +11,44 @@
 }
 
 */
+
+.number_style {
+  width: 20px;
+  height: 20px;
+  padding-top: 13px;
+  background-color: #aadfec;
+  border-radius: 50%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.td_w {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.th_w_7 {
+  width: 350px;
+  height: 50px;
+}
+
+.th_w_2 {
+  width: 100px;
+  height: 50px;
+}
+
+.table_rows_style {
+  width: 100%;
+}
+
+.table_rows_th_style {
+  border: 1px solid #4b4b4b;
+  text-align: center;
+}
+
+.table_rows_td_style {
+  border: 1px solid #4b4b4b;
+  text-align: right;
+}
