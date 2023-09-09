@@ -39,16 +39,14 @@
   height: 50px;
 }
 
-.table_rows_style {
-  width: 100%;
-}
-
 .table_rows_th_style {
   border: 1px solid #4b4b4b;
   text-align: center;
+  width: 100px;
 }
 
 .table_rows_td_style {
   border: 1px solid #4b4b4b;
   text-align: right;
+  width: 350px;
 }
