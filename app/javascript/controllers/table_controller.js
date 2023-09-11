@@ -35,10 +35,6 @@ export default class extends Controller {
       alwaysVisibleElements.forEach((element) => {
         element.classList.remove('hidden');
       });
-    // } else {
-    //   alwaysVisibleElements.forEach((element) => {
-    //     element.classList.add('hidden');
-    //   });
     }
   }
 }
