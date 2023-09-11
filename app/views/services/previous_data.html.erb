@@ -1,48 +1,50 @@
-<div class="container w-full">
-  <h1 class="font-bold text-4xl">Services#index</h1>
-  <p>Find me in app/views/services/index.html.erb</p>
-  <table>
-    <tbody>
-      <tr>
-        <th>回数</th>
-        <th>１</th>
-        <th>２</th>
-        <th>３</th>
-        <th>４</th>
-        <th>５</th>
-        <th>６</th>
-        <th>７</th>
-        <th>ボーナス</th>
-        <th>ボーナス</th>
-        <th>開催日</th>
-        <th>１等</th>
-        <th>２等</th>
-        <th>３等</th>
-        <th>４等</th>
-        <th>５等</th>
-        <th>６等</th>
-      </tr>
-      <% @loto7s.each do |loto7| %>
-        <tr>
-          <td><%= loto7.times %></td>
-          <td><%= loto7.first %></td>
-          <td><%= loto7.second %></td>
-          <td><%= loto7.third %></td>
-          <td><%= loto7.forth %></td>
-          <td><%= loto7.fifth %></td>
-          <td><%= loto7.sixth %></td>
-          <td><%= loto7.seventh %></td>
-          <td><%= loto7.bonusfirst %></td>
-          <td><%= loto7.bonussecond %></td>
-          <td><%= loto7.announcement %></td>
-          <td><%= loto7.firstcounts %></td>
-          <td><%= loto7.secondcounts %></td>
-          <td><%= loto7.thirdcounts %></td>
-          <td><%= loto7.forthcounts %></td>
-          <td><%= loto7.fifthcounts %></td>
-          <td><%= loto7.sixthcounts %></td>
+<%= render 'navigation' %>
+
+<div class="container mt-16 mb-12 mx-auto pl-8 md:px-0 lg:px-32 min-h-screen">
+  <div class="flex justify-center">
+    <h1 class="font-bold text-3xl">過去の当選番号</h1>
+  </div>
+
+  <div class="mt-10 text-xs">
+    <p></p>
+    <table data-controller="table" class="md:w-full md:table-fixed">
+      <tbody class="">
+        <tr class="bg-green-50">
+          <th class="th_pd_border always-visible md:w-7 lg:w-9 xl:w-auto">回</th>
+          <th colspan=7 class="th_pd_border always-visible md:w-44 lg:w-64 xl:w-auto" >本数字</th>
+          <th colspan=2 class="th_pd_border always-visible md:w-14 lg:w-20 xl:w-auto">bonus</th>
+          <th class="th_pd_border always-visible md:w-7 lg:w-9 xl:w-auto">１等</th>
+          <th class="th_pd_border always-visible md:w-7 lg:w-9 xl:w-auto">２等</th>
+          <th class="th_pd_border always-visible md:w-8 lg:w-9 xl:w-auto">３等</th>
+          <th class="hidden th_pd_border xl:w-auto">４等</th>
+          <th class="hidden th_pd_border xl:w-auto">５等</th>
+          <th class="hidden th_pd_border xl:w-auto">６等</th>
+          <th class="hidden th_pd_border lg:w-28 xl:w-30">開催日</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+        <% @loto7s.each do |loto7| %>
+          <tr>
+            <td class="td_w_pd always-visible"><%= loto7.times %></td>
+            <td class="td_w_pd always-visible"><%= loto7.first %></td>
+            <td class="td_w_pd always-visible"><%= loto7.second %></td>
+            <td class="td_w_pd always-visible"><%= loto7.third %></td>
+            <td class="td_w_pd always-visible"><%= loto7.forth %></td>
+            <td class="td_w_pd always-visible"><%= loto7.fifth %></td>
+            <td class="td_w_pd always-visible"><%= loto7.sixth %></td>
+            <td class="td_w_pd always-visible"><%= loto7.seventh %></td>
+            <td class="td_w_pd always-visible"><%= loto7.bonusfirst %></td>
+            <td class="td_w_pd always-visible"><%= loto7.bonussecond %></td>
+            <td class="td_w_pd_get always-visible"><%= loto7.firstcounts %></td>
+            <td class="td_w_pd_get always-visible"><%= loto7.secondcounts %></td>
+            <td class="td_w_pd_get always-visible"><%= loto7.thirdcounts %></td>
+            <td class="hidden td_w_pd_get"><%= loto7.forthcounts %></td>
+            <td class="hidden td_w_pd_get"><%= loto7.fifthcounts %></td>
+            <td class="hidden td_w_pd_get"><%= loto7.sixthcounts %></td>
+            <td class="hidden td_announce_w"><%= Time.parse("#{loto7.announcement}").strftime('%Y年%m月%d日') %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
+
+<%= render 'footer' %>
