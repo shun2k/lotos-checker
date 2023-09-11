@@ -50,3 +50,37 @@
   text-align: right;
   width: 350px;
 }
+
+.td_w_pd {
+  width: 23px;
+  height: 23spx;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #4b4b4b;
+}
+
+.td_w_pd_md {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #4b4b4b;
+}
+
+.td_announce_w {
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #4b4b4b;
+}
+
+
+.td_w_pd_get {
+  text-align: right;
+  vertical-align: middle;
+  border: 1px solid #4b4b4b;
+}
+
+
+.th_pd_border {
+  border: 1px solid #4b4b4b;
+}
