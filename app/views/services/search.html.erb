@@ -1,10 +1,19 @@
-<div>
-  <div>
-    <h1 class="font-bold text-4xl">番号検索</h1>
-    <p>7つ数字を選んで決定ボタンを押してください</p>
-    <hr>
+<%= render 'navigation' %>
+
+<div class="container mt-16 mx-auto px-8 md:px-14 lg:px-32 w-full min-h-screen">
+  <div class="flex justify-center">
+    <h1 class="font-bold text-3xl">過去データ</h1>
   </div>
-  <div>
+  <div class="py-4"> 
+    <p class="text-sm text-center">
+    過去同じ番号での当選はありません。<br>
+    過去の当選番号と一致していない確認してみましょう。<br>
+    7つの番号を選択して決定を押してください。
+    </p>
+  </div>
+  <div class="">
     <%= render partial: 'form' %>
   </div>
 </div>
+
+<%= render 'footer' %>

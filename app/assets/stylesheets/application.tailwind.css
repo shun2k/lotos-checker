@@ -12,14 +12,16 @@
 
 */
 
+/* search number design */
 .number_style {
-  width: 20px;
-  height: 20px;
-  padding-top: 13px;
-  background-color: #aadfec;
+  width: 30px;
+  height: 30px;
+  padding-top: 3px;
+  background-color: #f5e907;
   border-radius: 50%;
   text-align: center;
   box-sizing: border-box;
+  color: #1d0966;
 }
 
 
