@@ -22,6 +22,7 @@
   box-sizing: border-box;
 }
 
+
 .td_w {
   width: 50px;
   height: 50px;
@@ -83,4 +84,22 @@
 
 .th_pd_border {
   border: 1px solid #4b4b4b;
+}
+
+/* analysis_result 関連 */
+
+.bar_chart_base {
+  width: 320px;
+}
+
+.bar_chart_md {
+  width: 600px;
+}
+
+.bar_chart_lg {
+  width: 800px;
+}
+
+.bar_chart_xl {
+  width: 1000px;
 }
