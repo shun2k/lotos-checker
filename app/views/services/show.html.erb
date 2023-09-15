@@ -1,37 +1,63 @@
-<h1> 検索結果 </h1>
-<div>
-<p>入力した数字</p>
-<p><%= @params %></p>
-<div>
-<% if @search_results.any? %>
-<% @search_results.each do |result| %>
-	<p>過去に１等になった数値です</p>
-	<p><%= result.first %>,  <%= result.second %>、 <%= result.third %>、 
-	<%= result.forth %>、 <%= result.fifth %>、 <%= result.sixth %>、 <%= result.seventh %></p>
-	<p><%= result.announcement %></p>
-	<% end %>
-<% else %>
-	<p>完全一致するデータはありません</p>
-<% end %>
-<hr>
-<div>
-<% if !@six_hit_results.blank? %>
-	<p>6つ一致するデータはあります</p>
-	<% @six_hit_results.each do |six_hit_result| %>
-		<% six_hit_result.each do |result| %>
-		<p><%= "第 #{result['times']}  開催日  #{result['announcement']}" %></p>
-		<p><%= "１番目: #{result['first']} 
-						２番目: #{result['second']}
-						３番目: #{result['third']}
-						４番目: #{result['forth']} 
-						５番目: #{result['fifth']}
-						６番目: #{result['sixth']}
-						７番目: #{result['seventh']}"
-				%>
-		</p> 
-		<% end %>
-	<% end %>
-<% elsif not @search_results.any? %>
-	<p>7個中6つ一致するデータはありません</p>
-<% end %>
+<%= render 'navigation' %>
+
+<div class="container mt-16 mx-auto px-8 md:px-14 lg:px-32 w-full min-h-screen">
+	<div class="flex justify-center">
+    <h1 class="font-bold text-3xl">検索結果</h1>
+  </div>
+
+	<div class="border outline-double mt-10">
+		<div class="bg-lime-50 mx-3 py-3">
+			<div class="p-3 text-center font-bold">
+				<p>入力した数字</p>
+			</div>
+
+			<div class="py-3">
+				<p class="space-x-2 flex justify-center items-center">
+				<% @params.each do |num| %>
+					<span class="number_style"><%= num %></span>
+				<% end %>
+				</p>
+			</div>
+		</div>
+
+		<div class="pt-5 text-center">
+			<% if @search_results.any? %>
+			<% @search_results.each do |result| %>
+				<p>過去に１等になった数値です</p>
+				
+				<p class="mt-3">第 <%= result.times %> 回&nbsp; 開催日:<%= Time.parse("#{result['announcement']}").strftime('%Y年%m月%d日') %></p>
+				<% end %>
+			<% else %>
+				<p>完全一致するデータはありません</p>
+			<% end %>
+		</div>
+
+		<div class="py-5 text-center">
+			<% if !@six_hit_results.blank? %>
+				<p class="mt-3">6つ一致するデータはあります</p>
+				<% @six_hit_results.each do |six_hit_result| %>
+					<% six_hit_result.each do |result| %>
+					<p><%= "第 #{result['times']} 回 "%>&nbsp;
+						 開催日: <%= Time.parse("#{result['announcement']}").strftime('%Y年%m月%d日') %>
+					
+					</p>
+					<p class="space-x-2 flex justify-center items-center mt-3">
+						<span class="number_style"><%= result['first'] %></span>
+						<span class="number_style"><%= result['second'] %></span>
+						<span class="number_style"><%= result['third'] %></span>
+						<span class="number_style"><%= result['forth'] %></span>
+						<span class="number_style"><%= result['forth'] %></span>
+						<span class="number_style"><%= result['sixth'] %></span>
+						<span class="number_style"><%= result['seventh'] %></span>
+					</p> 
+					<% end %>
+				<% end %>
+			<% elsif not @search_results.any? %>
+				<p>7個中6つ一致するデータはありません</p>
+			<% end %>
+		</div>
+
+	</div>
 </div>
+
+<%= render 'footer' %>
