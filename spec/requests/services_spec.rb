@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe "Services", type: :request do
   describe "GET /index" do
     it "returns a successful response" do
+      @loto7 = FactoryBot.create(:loto7)
       get root_path
       expect(response).to have_http_status(200)
     end
