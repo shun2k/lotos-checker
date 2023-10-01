@@ -1,16 +1,20 @@
-<div>
-  <h1>generate_dataページ</h1>
-</div>
-<div>
-  <p><%="#{@last_data_announcement} までのデータによる数字" %></p>
-  <p><%= "回数: #{@total_count}" %></p>
-    <% (1..37).each do |number| %>
-    <p><%= "#{number}: #{@count_hash[number]} (#{@probability_hash[number]}%)" %></p>
-  <% end %>
-</div>
-<div>
-  <%= form_with(url: new_analysis_url, method: :get) do |form| %>
-    <%= form.hidden_field :number_data, value: @number_data %>
-    <%= form.submit "データを作成する" %>
-  <% end %>
+<%= render 'loto7s/admin_navi' %>
+
+<div class="container m-auto w-80">
+  <div class="mt-3">
+    <h1 class="text-xl">グラフ用データ作成ページ</h1>
+  </div>
+  <div class="mt-3">
+    <p><%= Time.parse("#{@last_data_announcement}").strftime('%Y年%m月%d日') %>更新のデータ</p>
+    <p><%= "回数: #{@total_count}" %></p>
+      <% (1..37).each do |number| %>
+      <p><%= "#{number}: #{@count_hash[number]} (#{@probability_hash[number]}%)" %></p>
+    <% end %>
+  </div>
+  <div class="mt-5 mb-10">
+    <%= form_with(url: new_analysis_url, method: :get) do |form| %>
+      <%= form.hidden_field :number_data, value: @number_data %>
+      <%= form.submit "データを作成する", class: "btn btn-blue btn-blue:hover" %>
+    <% end %>
+  </div>
 </div>

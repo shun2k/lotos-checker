@@ -1,4 +1,6 @@
-<div class="w-full">
+<%= render 'loto7s/admin_navi' %>
+
+<div class="container m-auto">
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
@@ -8,7 +10,7 @@
     <%= link_to 'New analysis', new_analysis_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <div id="analyses" class="min-w-full">
+  <div id="analyses" class="w-full whitespace-normal">
     <%= render @analyses %>
   </div>
 </div>
