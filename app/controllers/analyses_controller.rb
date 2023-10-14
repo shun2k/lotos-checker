@@ -36,7 +36,8 @@ class AnalysesController < ApplicationController
      count_hash = Hash.new(0)
      data.each do |value|
        number = value.to_i
-       count_hash[number] += 1 if (1..37).include?(number)
+       count_hash[number] += 1 if (1..37).cover?(number)
+       # 上 .include?を.cover?に変更
      end
      
      # 各数字の確率を計算
@@ -62,7 +63,7 @@ class AnalysesController < ApplicationController
       count_hash: @count_hash,
       probability_hash: @probability_hash
      }.to_json
-     puts @number_data
+     #puts @number_data       # コメントアウト　log表示を
   end
 
 

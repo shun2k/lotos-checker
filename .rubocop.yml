@@ -20,6 +20,14 @@ AllCops:
     - "vendor/**/*"
     - "config/environments/*"
     - "config/puma.rb"
+    - "Dockerfile"
+    - "docker-compose.yml"
+    - "Procfile"
+    - "Profile.dev"
+    - "README.md"
+    - ".gitignore"
+    - "test/**/*"
+    - "public/**/*"
 
 ### ルールのカスタマイズ
 
