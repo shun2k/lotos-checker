@@ -63,7 +63,6 @@ class AnalysesController < ApplicationController
       count_hash: @count_hash,
       probability_hash: @probability_hash
      }.to_json
-     #puts @number_data       # コメントアウト　log表示を
   end
 
 
