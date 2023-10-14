@@ -6,7 +6,8 @@ namespace :import do
   desc "Import loto7 from csv"
 
   task loto7: :environment do
-    path = File.join Rails.root, "db/csv/loto7.csv"
+    # path = File.join Rails.root, "db/csv/loto7.csv"
+    path = Rails.root.join('db/csv/loto7.csv').to_s
     puts "path: #{path}"
     list = []
     CSV.foreach(path, headers: true) do |row|
