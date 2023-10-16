@@ -29,6 +29,7 @@ jobs:
             docker-compose exec -T web rails db:create
             docker-compose exec -T web rails db:migrate
             docker-compose exec -T web bundle install
+            docker-compose exec -T web bundle exec rake assets:precompile
       # Add or replace test runners here
       - name: Run RSpec
         run: docker-compose exec -T web bundle exec rspec
