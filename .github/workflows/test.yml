@@ -27,6 +27,6 @@ jobs:
         run: docker-compose up -d --build
       # Add or replace test runners here
       - name: Run RSpec
-        run: docker-compose exec web bundle exec rspec
+        run: docker-compose exec -T web bundle exec rspec
 
 
