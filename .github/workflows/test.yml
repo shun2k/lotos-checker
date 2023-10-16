@@ -24,7 +24,10 @@ jobs:
           sudo apt-get install -y docker-compose
 
       - name: Start Docker Compose
-        run: docker-compose up -d --build
+        run: |
+            docker-compose up -d --build
+            docker-compose exec web rails db:create
+            docker-compose exec web rails db:migrate
       # Add or replace test runners here
       - name: Run RSpec
         run: docker-compose exec -T web bundle exec rspec
