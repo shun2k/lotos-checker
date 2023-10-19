@@ -11,9 +11,12 @@ jobs:
     name: Run RSpec
     runs-on: ubuntu-latest  # 使用するランナー環境
 
-    # env: 
-    #   POSTGRES_PASSWORD: ${{ secrets.DB_PASSWORD}}
-
+    env:
+      DATABASE_USER: ${{ secrets.DATABASE_USER }}
+      DATABASE_PORT: ${{ secrets.DATABASE_PORT }}
+      DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+      POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+      POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
