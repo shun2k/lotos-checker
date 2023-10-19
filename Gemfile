@@ -33,6 +33,9 @@ gem "jbuilder"
 # authentication
 gem "devise"
 
+# .envの使用
+gem 'dotenv-rails'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
