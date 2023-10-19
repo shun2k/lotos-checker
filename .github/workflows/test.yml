@@ -1,0 +1,40 @@
+name: test rspec, rubocop
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    name: Run RSpec
+    runs-on: ubuntu-latest  # 使用するランナー環境
+
+    env:
+      DATABASE_USER: ${{ secrets.DATABASE_USER }}
+      DATABASE_PORT: ${{ secrets.DATABASE_PORT }}
+      DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+      POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+      POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      # docker-compose
+      - name: Install Docker composer
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose
+
+      - name: Start Docker Compose
+        run: |
+            docker-compose up -d --build
+            docker-compose exec -T web rails db:create
+            docker-compose exec -T web rails db:migrate
+            docker-compose exec -T web bundle install
+            docker-compose exec -T web bundle exec rake assets:precompile
+      # Add or replace test runners here
+      - name: Run RSpec
+        run: docker-compose exec -T web bundle exec rspec
+
+
