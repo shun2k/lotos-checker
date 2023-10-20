@@ -13,7 +13,7 @@ services:
     volumes:
       - '.:/lotos-checker'
     environment:
-      - DATABASE_PASSWORD=postgres
+      - DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}
     tty: true
     stdin_open: true
     depends_on:
@@ -24,7 +24,7 @@ services:
   db:
     image: postgres
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=${{ secrets.POSTGRES_USER }}
+      - POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}
     volumes:
       - 'db-data:/var/lib/postgresql/data'
