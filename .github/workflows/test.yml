@@ -18,6 +18,12 @@ jobs:
       POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
       POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
     steps:
+      - name: Debug Environment Variables
+        run: |
+          echo "DATABASE_USER: $DATABASE_USER"
+          echo "DATABASE_PORT: $DATABASE_PORT"
+          echo "DATABASE_PASSWORD: $DATABASE_PASSWORD"
+          
       - name: Checkout code
         uses: actions/checkout@v3
       # docker-compose
@@ -29,7 +35,6 @@ jobs:
       - name: Start Docker Compose
         run: |
             docker-compose up -d --build
-            docker-compose exec -T web bundle install
             docker-compose exec -T web rails db:create
             docker-compose exec -T web rails db:migrate
             docker-compose exec -T web bundle exec rake assets:precompile
